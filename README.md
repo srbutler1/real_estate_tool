@@ -1,4 +1,6 @@
 # real_estate_tool
+(All data is available on Zillow: https://www.zillow.com/research/data/)
+
 Overview
 The Real Estate Data Visualization Tool is an interactive dashboard and AI-powered assistant designed to help users explore, analyze, and visualize real estate market trends. This tool uses a combination of Dash (for web-based interactivity) and OpenAI's GPT (to process natural language queries) to generate data visualizations dynamically based on user input.
 
