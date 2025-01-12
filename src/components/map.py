@@ -2,7 +2,7 @@
 
 from dash import html, dcc
 import plotly.express as px
-from ..utils.visualization import create_map_visualization
+from src.utils.visualization import create_map_visualization
 
 def create_map_tab(data):
     """Create the map visualization tab."""

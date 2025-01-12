@@ -2,9 +2,9 @@
 
 import plotly.express as px
 from openai import OpenAI
-from typing import Optional, Tuple
+from typing import Optional, Tuple, Union
 import pandas as pd
-from ..config import (
+from src.config import (
     OPENAI_API_KEY, 
     OPENAI_MODEL, 
     MAP_STYLE, 
@@ -14,7 +14,7 @@ from ..config import (
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
-def create_map_visualization(data: pd.DataFrame) -> px.Figure:
+def create_map_visualization(data: pd.DataFrame) -> Union[px.scatter_mapbox, px.scatter]:
     """Create the main map visualization."""
     return px.scatter_mapbox(
         data,
@@ -52,7 +52,7 @@ def generate_custom_visualization(
     query: str,
     data: pd.DataFrame,
     second_latest_data: pd.DataFrame
-) -> Tuple[Optional[px.Figure], str]:
+) -> Tuple[Optional[Union[px.scatter_mapbox, px.scatter]], str]:
     """Generate a custom visualization based on natural language query."""
     try:
         # Get visualization code from OpenAI

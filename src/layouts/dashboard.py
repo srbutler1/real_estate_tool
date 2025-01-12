@@ -1,10 +1,10 @@
 """Main dashboard layout component."""
 
 from dash import html, dcc
-from ..components.map import create_map_tab
-from ..components.search import create_search_tab
-from ..components.nlp import create_nlp_tab
-from ..config import METRIC_DEFINITIONS
+from src.components.map import create_map_tab
+from src.components.search import create_search_tab
+from src.components.nlp import create_nlp_tab
+from src.config import METRIC_DEFINITIONS
 
 def create_dashboard_layout(data):
     """Create the main dashboard layout."""

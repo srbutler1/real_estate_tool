@@ -3,16 +3,18 @@
 import pandas as pd
 from dash import Dash, Input, Output, State
 import plotly.express as px
-
-from .data.data_loader import DataLoader
-from .layouts.dashboard import create_dashboard_layout
-from .utils.visualization import generate_custom_visualization
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from src.data.data_loader import DataLoader
+from src.layouts.dashboard import create_dashboard_layout
+from src.utils.visualization import generate_custom_visualization
 
 # Initialize the Dash app
 app = Dash(__name__)
 
 # Initialize data loader and load data
-data_loader = DataLoader("path/to/your/geocoded_msa_data.csv")  # Update with your data path
+data_loader = DataLoader("data/processed/geocoded_msa_data.csv")  # Update with your data path
 data = data_loader.load_data()
 
 # Set up the app layout
