@@ -8,15 +8,21 @@ The system uses three AI agents working together to process natural language que
 ```mermaid
 flowchart TD
     subgraph User["User Input"]
-        Query["'Show me Boston home prices'"]
+        Query["'Analyze real estate market trends and provide visualization instructions'"]
     end
 
-    subgraph Agents["    AI Agents"]
-        Agent1["🎨 Visualization Agent
-        Creates Python code for the visualization"]
-        Agent2["🔍 Code Verification Agent
-        Checks and runs the code safely"]
-        Agent3["📊 Explanation Agent
+    subgraph Data["Data"]
+        DataFrame["Real Estate Dataset (DataFrame)"]
+    end
+
+    subgraph Agents["AI Agents"]
+        Agent1["🧠 Data Analysis Agent
+        Analyzes data and provides visualization instructions"]
+        Agent2["🎨 Visualization Agent
+        Creates Python code for the visualization based on instructions"]
+        Agent3["🔍 Code Refinement Agent
+        Enhances and validates the generated code using AST"]
+        Agent4["📊 Explanation Agent
         Explains insights in business terms"]
     end
 
@@ -25,18 +31,23 @@ flowchart TD
         Text["Business Insights"]
     end
 
-    Query -..-> Agent1
+    Query --> Agent1
+    DataFrame --> Agent1
     Agent1 --> Agent2
     Agent2 --> Agent3
-    Agent2 --> Chart
-    Agent3 --> Text
+    Agent3 --> Agent4
+    DataFrame --> Agent3
+    Agent3 --> Chart
+    Agent4 --> Text
 
     classDef queryClass fill:#e6f3ff,stroke:#333,stroke-width:2px,color:#000
+    classDef dataClass fill:#f2f2f2,stroke:#333,stroke-width:2px,color:#000
     classDef agentClass fill:#fff7e6,stroke:#333,stroke-width:2px,color:#000
     classDef outputClass fill:#e6ffe6,stroke:#333,stroke-width:2px,color:#000
     
     class Query queryClass
-    class Agent1,Agent2,Agent3 agentClass
+    class DataFrame dataClass
+    class Agent1,Agent2,Agent3,Agent4 agentClass
     class Chart,Text outputClass
 ```
 ```
