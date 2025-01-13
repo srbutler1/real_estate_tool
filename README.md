@@ -26,6 +26,9 @@ Metro_zori_uc_sfrcondomfr_sm_month.csv
 
 Place files in structure (Geocoded_msa_data will have to be created. Reach out for directions to do so as I haven't added the logic in here)
 real-estate-analytics/
+
+```plaintext
+real-estate-analytics/
 ├── data/
 │   ├── processed/           # For processed data files
 │   │   ├── geocoded_msa_data.csv
