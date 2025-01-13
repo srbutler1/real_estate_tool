@@ -1,5 +1,4 @@
-"""NLP-powered visualization component."""
-
+# src/components/nlp.py
 from dash import html, dcc
 
 def create_nlp_tab():
@@ -11,7 +10,7 @@ def create_nlp_tab():
             dcc.Textarea(
                 id='query-input',
                 placeholder="Describe the visualization you'd like to see...",
-                style={'width': '100%', 'height': '100px', 'margin-bottom': '10px'}
+                style={'width': '100%', 'height': '100px', 'marginBottom': '10px'}
             ),
             html.Button(
                 'Generate Visualization',
@@ -19,7 +18,22 @@ def create_nlp_tab():
                 n_clicks=0,
                 style={'margin': '10px'}
             ),
-            dcc.Graph(id='custom-visualization'),
-            html.Div(id='query-response', style={'whiteSpace': 'pre-wrap', 'margin': '20px'})
+            # Add loading components
+            html.Div(id='agent-status', style={'margin': '20px'}),
+            dcc.Loading(
+                id="loading-visualization",
+                type="default",
+                children=[
+                    dcc.Graph(id='custom-visualization'),
+                    html.Div(id='query-response', style={'whiteSpace': 'pre-wrap', 'margin': '20px'})
+                ]
+            ),
+            dcc.Store(id='is-generating', data=False),
+            dcc.Interval(
+                id='agent-interval',
+                interval=1000,  # every second
+                n_intervals=0,
+                disabled=True
+            )
         ]
     )
