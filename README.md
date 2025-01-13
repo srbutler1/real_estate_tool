@@ -32,13 +32,14 @@ flowchart TD
     Agent2 --> Chart
     Agent3 --> Text
 
-    classDef queryClass fill:#e6f3ff,stroke:#333,stroke-width:2px
-    classDef agentClass fill:#fff7e6,stroke:#333,stroke-width:2px
-    classDef outputClass fill:#e6ffe6,stroke:#333,stroke-width:2px
+    classDef queryClass fill:#e6f3ff,stroke:#333,stroke-width:2px,color:#000
+    classDef agentClass fill:#fff7e6,stroke:#333,stroke-width:2px,color:#000
+    classDef outputClass fill:#e6ffe6,stroke:#333,stroke-width:2px,color:#000
     
     class Query queryClass
     class Agent1,Agent2,Agent3 agentClass
     class Chart,Text outputClass
+```
 ```
 
 ## Features
