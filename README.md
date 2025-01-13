@@ -1,54 +1,6 @@
 # Real Estate Analytics Dashboard
 
 An interactive dashboard powered by AI agents for analyzing real estate market data. This tool allows users to explore real estate metrics through natural language queries, creating custom visualizations and providing insightful analysis.
-
-## Data Sources 
-This dashboard uses Zillow's Metro-level real estate data. To get the required data:
-Download Required Files from Zillow Research
-Visit Zillow Research Data and download these files:
-
-Metro_market_temp_index_uc_sfrcondo_month.csv
-Metro_invt_fs_uc_sfrcondo_sm_month.csv
-Metro_mean_doz_pending_uc_sfrcondo_sm_month.csv
-Metro_mean_sale_to_list_uc_sfrcondo_sm_month.csv
-Metro_median_sale_price_uc_sfrcondo_sm_sa_month.csv
-Metro_mlp_uc_sfrcondo_sm_month.csv
-Metro_new_con_median_sale_price_uc_sfrcondo_month.csv
-Metro_new_con_sales_count_raw_uc_sfrcondo_month.csv
-Metro_new_listings_uc_sfrcondo_sm_month.csv
-Metro_pct_sold_above_list_uc_sfrcondo_sm_month.csv
-Metro_perc_listings_price_cut_uc_sfrcondo_sm_month.csv
-Metro_sales_count_now_uc_sfrcondo_month.csv
-Metro_total_transaction_value_uc_sfrcondo_sm_sa_month.csv
-Metro_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv
-Metro_zordi_uc_sfrcondomfr_month.csv
-Metro_zori_uc_sfrcondomfr_sm_month.csv
-
-Place files in structure (Geocoded_msa_data will have to be created. Reach out for directions to do so as I haven't added the logic in here)
-real-estate-analytics/
-
-```plaintext
-real-estate-analytics/
-├── data/
-│   ├── processed/           # For processed data files
-│   │   ├── geocoded_msa_data.csv
-│   │   └── custom_msa_geojson.geojson
-│   └── zillow/             # Place downloaded files here
-│       ├── Metro_market_temp_index_uc_sfrcondo_month.csv
-│       ├── Metro_invt_fs_uc_sfrcondo_sm_month.csv
-│       └── ... [other Zillow files]
-
-The data includes key metrics such as:
-
-Home Values (ZHVI)
-Inventory Levels
-Price Changes
-Market Temperature Index
-Days on Market
-Sales Volume
-Rental Data (ZORI)
-And more
-
 ## System Architecture
 
 The system uses three AI agents working together to process natural language queries and generate insights:
@@ -88,6 +40,54 @@ flowchart TD
     class Chart,Text outputClass
 ```
 ```
+
+## Data Sources 
+This dashboard uses Zillow's Metro-level real estate data. To get the required data:
+Download Required Files from Zillow Research
+Visit Zillow Research Data and download these files:
+
+Metro_market_temp_index_uc_sfrcondo_month.csv
+Metro_invt_fs_uc_sfrcondo_sm_month.csv
+Metro_mean_doz_pending_uc_sfrcondo_sm_month.csv
+Metro_mean_sale_to_list_uc_sfrcondo_sm_month.csv
+Metro_median_sale_price_uc_sfrcondo_sm_sa_month.csv
+Metro_mlp_uc_sfrcondo_sm_month.csv
+Metro_new_con_median_sale_price_uc_sfrcondo_month.csv
+Metro_new_con_sales_count_raw_uc_sfrcondo_month.csv
+Metro_new_listings_uc_sfrcondo_sm_month.csv
+Metro_pct_sold_above_list_uc_sfrcondo_sm_month.csv
+Metro_perc_listings_price_cut_uc_sfrcondo_sm_month.csv
+Metro_sales_count_now_uc_sfrcondo_month.csv
+Metro_total_transaction_value_uc_sfrcondo_sm_sa_month.csv
+Metro_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv
+Metro_zordi_uc_sfrcondomfr_month.csv
+Metro_zori_uc_sfrcondomfr_sm_month.csv
+
+Place files in structure (Geocoded_msa_data will have to be created. Reach out for directions to do so as I haven't added the logic in here)
+real-estate-analytics/
+
+```plaintext
+real-estate-analytics/
+├── data/
+│   ├── processed/           # For processed data files
+│   │   ├── geocoded_msa_data.csv
+│   │   └── custom_msa_geojson.geojson
+│   └── zillow/             # Place downloaded files here
+│       ├── Metro_market_temp_index_uc_sfrcondo_month.csv
+│       ├── Metro_invt_fs_uc_sfrcondo_sm_month.csv
+│       └── ... [other Zillow files]
+```
+The data includes key metrics such as:
+
+Home Values (ZHVI)
+Inventory Levels
+Price Changes
+Market Temperature Index
+Days on Market
+Sales Volume
+Rental Data (ZORI)
+And more
+
 
 ## Features
 
